@@ -53,7 +53,8 @@ export const WORDS: Record<string, Word[]> = {
     { display: "何もしてないけどヒューズが飛んだ", reading: "なにもしてないけどひゅーずがとんだ" },
     { display: "コンセントの極性変えちゃうぞ", reading: "こんせんとのきょくせいかえちゃうぞ" },
     { display: "これはヒヤリハット案件だな", reading: "これはひやりはっとあんけんだな" },
-    { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" }
+    { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" },
+    { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
 
 
   ],
