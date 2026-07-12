@@ -80,6 +80,15 @@ app.post('/api/ranking/:difficulty', async (req, res) => {
   res.json(top10);
 });
 
+// 本番環境用: Viteでビルドされた静的ファイルを配信する
+const distPath = path.join(__dirname, '../dist');
+app.use(express.static(distPath));
+
+// API以外のすべてのリクエストをindex.htmlにフォールバック（SPAルーティング用）
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Backend server is running on http://localhost:${PORT}`);
 });
