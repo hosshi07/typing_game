@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { TypingSession } from '../lib/romajiParser';
 import type { Word } from '../data/config';
+import { playTypeSound, playMissSound, playFinishSound } from '../lib/audio';
 
 export type GameState = 'idle' | 'playing' | 'finished';
 
@@ -102,12 +103,15 @@ export function useTypingGame(wordsList: Word[], timeLimit: number) {
 
       // 単語を打ち終わったか
       if (session.isFinished()) {
+        playFinishSound();
         nextWord();
       } else {
+        playTypeSound();
         // 表示を更新
         setTick(t => t + 1);
       }
     } else {
+      playMissSound();
       setStats(prev => ({
         ...prev,
         missKeys: prev.missKeys + 1,

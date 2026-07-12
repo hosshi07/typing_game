@@ -47,7 +47,8 @@ export const WORDS: Record<string, Word[]> = {
     { display: "先延ばしの天才", reading: "さきのばしのてんさい" },
     { display: "栞をなしとよむ", reading: "しおりをなしとよむ" },
     { display: "占いがすべて", reading: "うらないがすべて" },
-    { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
+    { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" },
+    { display: "だから言ったじゃないですか", reading: "だからいったじゃないですか" }
   ],
   hard: [
     { display: "技術者倫理の失敗作", reading: "ぎじゅつしゃりんりのしっぱいさく" },
@@ -55,8 +56,10 @@ export const WORDS: Record<string, Word[]> = {
     { display: "コンセントの極性変えちゃうぞ", reading: "こんせんとのきょくせいかえちゃうぞ" },
     { display: "これはヒヤリハット案件だな", reading: "これはひやりはっとあんけんだな" },
     { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" },
-    { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
-
-
+    { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" },
+    { display: "ポテチの前でポテチを探す", reading: "ぽてちのまえでぽてちをさがす" },
+    { display: "何もないところで転ぶ", reading: "なにもないところでころぶ" },
+    { display: "人間関係の出来損ない", reading: "にんげんかんけいのできそこない" },
+    { display: "国会になったミーティング", reading: "こっかいになったみーてぃんぐ" },
   ],
 };
