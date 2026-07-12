@@ -46,7 +46,8 @@ export const WORDS: Record<string, Word[]> = {
     { display: "上下左右盲", reading: "じょうげさゆうもう" },
     { display: "先延ばしの天才", reading: "さきのばしのてんさい" },
     { display: "栞をなしとよむ", reading: "しおりをなしとよむ" },
-    { display: "コピーフェールでお仕置きよ", reading: "こぴーふぇーるでおしおきよ" }
+    { display: "占いがすべて", reading: "うらないがすべて" },
+    { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
   ],
   hard: [
     { display: "技術者倫理の失敗作", reading: "ぎじゅつしゃりんりのしっぱいさく" },
