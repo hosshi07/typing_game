@@ -51,6 +51,7 @@ function App() {
       {gameState === 'finished' && (
         <ResultScreen 
           stats={stats} 
+          difficulty={selectedDiff}
           onRetry={resetGame} 
         />
       )}
