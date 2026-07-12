@@ -7,10 +7,25 @@ type Props = {
 
 export const RankingBoard: React.FC<Props> = ({ difficulty }) => {
   const [ranking, setRanking] = useState<RankingEntry[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setRanking(getRanking(difficulty));
+    let mounted = true;
+    setLoading(true);
+    getRanking(difficulty).then(data => {
+      if (mounted) {
+        setRanking(data);
+        setLoading(false);
+      }
+    });
+    return () => {
+      mounted = false;
+    };
   }, [difficulty]);
+
+  if (loading) {
+    return <div className="ranking-empty">読み込み中...</div>;
+  }
 
   if (ranking.length === 0) {
     return <div className="ranking-empty">まだランキングデータがありません</div>;
@@ -45,4 +60,5 @@ export const RankingBoard: React.FC<Props> = ({ difficulty }) => {
     </div>
   );
 };
+
 

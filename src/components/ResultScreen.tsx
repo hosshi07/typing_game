@@ -12,12 +12,15 @@ type Props = {
 export const ResultScreen: React.FC<Props> = ({ stats, difficulty, onRetry }) => {
   const [name, setName] = useState('');
   const [registered, setRegistered] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (stats.basicScore > 0 && !registered) {
-      addRanking(name, stats.basicScore, difficulty);
+    if (stats.basicScore > 0 && !registered && !isSaving) {
+      setIsSaving(true);
+      await addRanking(name, stats.basicScore, difficulty);
       setRegistered(true);
+      setIsSaving(false);
     }
   };
 
@@ -53,8 +56,11 @@ export const ResultScreen: React.FC<Props> = ({ stats, difficulty, onRetry }) =>
             onChange={e => setName(e.target.value)}
             className="ranking-input"
             maxLength={15}
+            disabled={isSaving}
           />
-          <button type="submit" className="btn secondary">登録する</button>
+          <button type="submit" className="btn secondary" disabled={isSaving}>
+            {isSaving ? '保存中...' : '登録する'}
+          </button>
         </form>
       ) : registered ? (
         <div className="ranking-section">

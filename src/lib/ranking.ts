@@ -5,39 +5,40 @@ export type RankingEntry = {
   date: string;
 };
 
-const getStorageKey = (difficulty: string) => `typing_game_ranking_${difficulty}`;
-
-export function getRanking(difficulty: string): RankingEntry[] {
+export async function getRanking(difficulty: string): Promise<RankingEntry[]> {
   try {
-    const data = localStorage.getItem(getStorageKey(difficulty));
-    if (!data) return [];
-    return JSON.parse(data);
+    const response = await fetch(`/api/ranking/${difficulty}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
   } catch (e) {
-    console.error('Failed to load ranking:', e);
+    console.error('Failed to load ranking from server:', e);
     return [];
   }
 }
 
-export function addRanking(name: string, score: number, difficulty: string): RankingEntry[] {
-  const current = getRanking(difficulty);
-  const newEntry: RankingEntry = {
-    id: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
-    name: name || 'ゲスト',
-    score,
-    date: new Date().toISOString(),
-  };
-  
-  const updated = [...current, newEntry];
-  // スコアの高い順にソートし、最大10件まで保存
-  updated.sort((a, b) => b.score - a.score);
-  const top10 = updated.slice(0, 10);
-  
+export async function addRanking(name: string, score: number, difficulty: string): Promise<RankingEntry[]> {
   try {
-    localStorage.setItem(getStorageKey(difficulty), JSON.stringify(top10));
+    const response = await fetch(`/api/ranking/${difficulty}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, score }),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
   } catch (e) {
-    console.error('Failed to save ranking:', e);
+    console.error('Failed to save ranking to server:', e);
+    return [];
   }
-  
-  return top10;
 }
+
 
