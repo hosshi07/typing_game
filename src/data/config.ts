@@ -25,9 +25,10 @@ export const WORDS: Record<string, Word[]> = {
     { display: "ロボット", reading: "ろぼっと" },
     { display: "クローズアーム", reading: "くろーずあーむ" },
     { display: "アットホーム", reading: "あっとほーむ" },
+    { display: "ルールの穴", reading: "るーるのあな" },
     { display: "口を開けば", reading: "くちをひらけば" },
     { display: "日本酒", reading: "にほんしゅ" },
-    { display: "飲み込む", reading: "飲み込む" },
+    { display: "飲み込む", reading: "のみこむ" },
     { display: "リキュール", reading: "りきゅーる" },
     { display: "組織が腐る", reading: "そしきがくさる" }
   ],
@@ -46,13 +47,7 @@ export const WORDS: Record<string, Word[]> = {
     { display: "先延ばしの天才", reading: "さきのばしのてんさい" },
     { display: "栞をなしとよむ", reading: "しおりをなしとよむ" },
     { display: "占いがすべて", reading: "うらないがすべて" },
-    { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" },
-    { display: "だから言ったじゃないですか", reading: "だからいったじゃないですか" },
-    { display: "簡単ですよね", reading: "かんたんですよね" },
-    { display: "頭が弱く柔らかい", reading: "あたまがよわくやわらかい" },
-    { display: "やる気はある", reading: "やるきはある" },
-    { display: "実は抜け穴があって", reading: "じつはぬけあながあって" },
-    { display: "そうやって嘘つくんだ", reading: "そうやってうそつくんだ" }
+    { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
   ],
   hard: [
     { display: "技術者倫理の失敗作", reading: "ぎじゅつしゃりんりのしっぱいさく" },
@@ -60,14 +55,8 @@ export const WORDS: Record<string, Word[]> = {
     { display: "コンセントの極性変えちゃうぞ", reading: "こんせんとのきょくせいかえちゃうぞ" },
     { display: "これはヒヤリハット案件だな", reading: "これはひやりはっとあんけんだな" },
     { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" },
-    { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" },
-    { display: "ポテチの前でポテチを探す", reading: "ぽてちのまえでぽてちをさがす" },
-    { display: "何もないところで転ぶ", reading: "なにもないところでころぶ" },
-    { display: "人間関係の出来損ない", reading: "にんげんかんけいのできそこない" },
-    { display: "国会になったミーティング", reading: "こっかいになったみーてぃんぐ" },
-    { display: "脳みそがコンフリクトした", reading: "のうみそがこんふりくとした" },
-    { display: "存在しない仕様書", reading: "そんざいしないしようしょ" },
-    { display: "白紙に戻そうプロジェクト", reading: "はくしにもどそうぷろじぇくと" },
-    { display: "月がきれいですねどの月ですか", reading: "つきがきれいですねどのつきですか" }
+    { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
+
+
   ],
 };
