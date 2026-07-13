@@ -34,6 +34,7 @@ export const WORDS: Record<string, Word[]> = {
   ],
   normal: [
     { display: "資格がない", reading: "しかくがない" },
+    { display: "バッテリーパーン", reading: "ばってりーぱーん" },
     { display: "あなたほんとうにすごいよ", reading: "あなたほんとうにすごいよ" },
     { display: "横領力学", reading: "おうりょうりきがく" },
     { display: "知ろうとしない心構え", reading: "しろうとしないこころがまえ" },
@@ -47,6 +48,8 @@ export const WORDS: Record<string, Word[]> = {
     { display: "先延ばしの天才", reading: "さきのばしのてんさい" },
     { display: "栞をなしとよむ", reading: "しおりをなしとよむ" },
     { display: "占いがすべて", reading: "うらないがすべて" },
+    { display: "再々再折衝", reading: "さいさいさいせっしょう" },
+    { display: "なんか面白いことないかな", reading: "なんかおもしろいことないかな" },
     { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
   ],
   hard: [
@@ -55,6 +58,7 @@ export const WORDS: Record<string, Word[]> = {
     { display: "コンセントの極性変えちゃうぞ", reading: "こんせんとのきょくせいかえちゃうぞ" },
     { display: "これはヒヤリハット案件だな", reading: "これはひやりはっとあんけんだな" },
     { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" },
+    { display: "かわいそうかわにいそう", reading: "かわいそうかわにいそう" },
     { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
 
 
