@@ -18,6 +18,9 @@ export const PlayScreen: React.FC<Props> = ({ session, currentWord, timeLeft, st
     <div className="glass-panel">
       <div className="stats-bar">
         <div>スコア: <span style={{color: 'var(--accent-color)'}}>{stats.basicScore}</span></div>
+        <div style={{color: stats.combo >= 30 ? 'var(--success-color)' : 'var(--text-muted)'}}>
+          {stats.combo > 0 ? `${stats.combo} Combo!` : ''}
+        </div>
         <div className={`time-left ${timeLeft <= 10 ? 'warning' : ''}`}>
           {timeLeft}s
         </div>

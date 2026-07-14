@@ -65,7 +65,11 @@ export const ResultScreen: React.FC<Props> = ({ stats, difficulty, onRetry }) =>
       ) : registered ? (
         <div className="ranking-section">
           <p className="ranking-success">ランキングに登録しました！</p>
-          <RankingBoard difficulty={difficulty} />
+          <RankingBoard 
+            difficulty={difficulty} 
+            targetName={name} 
+            targetScore={stats.basicScore} 
+          />
         </div>
       ) : null}
 

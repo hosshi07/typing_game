@@ -10,6 +10,7 @@ export type GameStats = {
   missKeys: number;
   averageKPS: number;
   basicScore: number;
+  combo: number;
 };
 
 export function useTypingGame(wordsList: Word[], timeLimit: number) {
@@ -23,7 +24,11 @@ export function useTypingGame(wordsList: Word[], timeLimit: number) {
     missKeys: 0,
     averageKPS: 0,
     basicScore: 0,
+    combo: 0,
   });
+
+  // 使い切るまで同じ単語を出さないための残機リスト
+  const availableWordsRef = useRef<Word[]>([]);
   
   // Reactの再レンダリングを強制するためのTick
   const [, setTick] = useState(0);
@@ -53,7 +58,11 @@ export function useTypingGame(wordsList: Word[], timeLimit: number) {
   }, []);
 
   const nextWord = useCallback(() => {
-    const randomWord = wordsList[Math.floor(Math.random() * wordsList.length)];
+    // 候補が空なら、現在の単語リストをシャッフルして補充
+    if (availableWordsRef.current.length === 0) {
+      availableWordsRef.current = [...wordsList].sort(() => Math.random() - 0.5);
+    }
+    const randomWord = availableWordsRef.current.pop()!;
     setCurrentWord(randomWord);
     setSession(new TypingSession(randomWord.reading));
     setTick(t => t + 1);
@@ -62,7 +71,8 @@ export function useTypingGame(wordsList: Word[], timeLimit: number) {
   const startGame = useCallback(() => {
     setGameState('playing');
     setTimeLeft(timeLimit);
-    setStats({ correctKeys: 0, missKeys: 0, averageKPS: 0, basicScore: 0 });
+    setStats({ correctKeys: 0, missKeys: 0, averageKPS: 0, basicScore: 0, combo: 0 });
+    availableWordsRef.current = []; // ゲーム開始時にバッグをリセット
     startTimeRef.current = Date.now();
     nextWord();
 
@@ -95,10 +105,23 @@ export function useTypingGame(wordsList: Word[], timeLimit: number) {
     const isCorrect = session.typeChar(key);
 
     if (isCorrect) {
+      const newCombo = stats.combo + 1;
+      let addedTime = 0;
+      
+      // コンボによる時間追加
+      if (newCombo === 30) addedTime = 1;
+      else if (newCombo === 60) addedTime = 2;
+      else if (newCombo >= 90 && newCombo % 30 === 0) addedTime = 3;
+
+      if (addedTime > 0) {
+        setTimeLeft(t => t + addedTime);
+      }
+
       setStats(prev => ({
         ...prev,
         correctKeys: prev.correctKeys + 1,
         basicScore: prev.basicScore + 10,
+        combo: newCombo,
       }));
 
       // 単語を打ち終わったか
@@ -115,9 +138,10 @@ export function useTypingGame(wordsList: Word[], timeLimit: number) {
       setStats(prev => ({
         ...prev,
         missKeys: prev.missKeys + 1,
+        combo: 0, // ミスでコンボリセット
       }));
     }
-  }, [gameState, session, nextWord]);
+  }, [gameState, session, nextWord, stats, endGame]);
 
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
