@@ -54,6 +54,7 @@ export const WORDS: Record<string, Word[]> = {
     { display: "計画書の計画書", reading: "けいかくしょのけいかくしょ" },
     { display: "生産性のない会話", reading: "せいさんせいのないかいわ" },
     { display: "計画書の後に全体設計", reading: "けいかくしょのあとにぜんたいせっけい" },
+    { display: "あっそ行ってきたら", reading: "あっそいってきたら" },
     { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
  
   ],
