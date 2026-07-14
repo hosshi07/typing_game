@@ -49,8 +49,13 @@ export const WORDS: Record<string, Word[]> = {
     { display: "栞をなしとよむ", reading: "しおりをなしとよむ" },
     { display: "占いがすべて", reading: "うらないがすべて" },
     { display: "再々再折衝", reading: "さいさいさいせっしょう" },
+    { display: "再々再セッション", reading: "さいさいさいせっしょん" },
     { display: "なんか面白いことないかな", reading: "なんかおもしろいことないかな" },
+    { display: "計画書の計画書", reading: "けいかくしょのけいかくしょ" },
+    { display: "生産性のない会話", reading: "せいさんせいのないかいわ" },
+    { display: "計画書の後に全体設計", reading: "けいかくしょのあとにぜんたいせっけい" },
     { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
+ 
   ],
   hard: [
     { display: "技術者倫理の失敗作", reading: "ぎじゅつしゃりんりのしっぱいさく" },
@@ -58,6 +63,7 @@ export const WORDS: Record<string, Word[]> = {
     { display: "コンセントの極性変えちゃうぞ", reading: "こんせんとのきょくせいかえちゃうぞ" },
     { display: "これはヒヤリハット案件だな", reading: "これはひやりはっとあんけんだな" },
     { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" },
+    { display: "ほんとにたいへんおもしろい", reading: "ほんとにたいへんおもしろい" },
     { display: "かわいそうかわにいそう", reading: "かわいそうかわにいそう" },
     { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
 
