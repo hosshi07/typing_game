@@ -43,6 +43,7 @@ export const WORDS: Record<string, Word[]> = {
     { display: "そうやっておいていくんだ", reading: "そうやっておいていくんだ" },
     { display: "仲間はずれにするんだ", reading: "なかまはずれにするんだ" },
     { display: "dの一族", reading: "dのいちぞく" },
+    { display: "人間の補集合", reading: "にんげんのほしゅうごう" },
     { display: "劇場型詐欺師", reading: "げきじょうがたさぎし" },
     { display: "上下左右盲", reading: "じょうげさゆうもう" },
     { display: "先延ばしの天才", reading: "さきのばしのてんさい" },
@@ -55,17 +56,28 @@ export const WORDS: Record<string, Word[]> = {
     { display: "生産性のない会話", reading: "せいさんせいのないかいわ" },
     { display: "計画書の後に全体設計", reading: "けいかくしょのあとにぜんたいせっけい" },
     { display: "あっそ行ってきたら", reading: "あっそいってきたら" },
+    { display: "勧誘失敗作", reading: "かんゆうしっぱいさく" },
+    { display: "稚児をようじと読む", reading: "ちごをようじとよむ" },
+    { display: "エンジニアだもん", reading: "えんじにあだもん" },
+    { display: "ロボティックス", reading: "ろぼてぃっくす" },
+    { display: "ロボカップは祭りだ", reading: "ろぼかっぷはまつりだ" },
     { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
  
   ],
   hard: [
+    { display: "崖っぷちを大好きになりたい", reading: "がけっぷちをだいすきになりたい" },
+    { display: "やっぱカチャカ", reading: "やっぱかちゃか" },
+    { display: "魔改造トーマス", reading: "まかいぞうとーます" },
+    { display: "業界狭いな", reading: "ぎょうかいせまいな" },
     { display: "技術者倫理の失敗作", reading: "ぎじゅつしゃりんりのしっぱいさく" },
+    { display: "月がきれいですねどの月ですか", reading: "つきがきれいですねどのつきですか" },
     { display: "何もしてないけどヒューズが飛んだ", reading: "なにもしてないけどひゅーずがとんだ" },
     { display: "コンセントの極性変えちゃうぞ", reading: "こんせんとのきょくせいかえちゃうぞ" },
     { display: "これはヒヤリハット案件だな", reading: "これはひやりはっとあんけんだな" },
     { display: "こいつ京都人だから", reading: "こいつきょうとじんだから" },
     { display: "ほんとにたいへんおもしろい", reading: "ほんとにたいへんおもしろい" },
     { display: "かわいそうかわにいそう", reading: "かわいそうかわにいそう" },
+    { display: "生涯憐みの令", reading: "しょうがいあわれみのれい" },
     { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
 
 
