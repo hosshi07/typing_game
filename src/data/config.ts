@@ -60,6 +60,8 @@ export const WORDS: Record<string, Word[]> = {
     { display: "稚児をようじと読む", reading: "ちごをようじとよむ" },
     { display: "エンジニアだもん", reading: "えんじにあだもん" },
     { display: "ロボティックス", reading: "ろぼてぃっくす" },
+    { display: "dの前日", reading: "dのぜんじつ" },
+    { display: "二枚舌外交の破綻", reading: "にまいじたがいこうのはたん" },
     { display: "ロボカップは祭りだ", reading: "ろぼかっぷはまつりだ" },
     { display: "砂丘をさおかとよむ", reading: "さきゅうをさおかとよむ" }
  
@@ -67,8 +69,11 @@ export const WORDS: Record<string, Word[]> = {
   hard: [
     { display: "崖っぷちを大好きになりたい", reading: "がけっぷちをだいすきになりたい" },
     { display: "やっぱカチャカ", reading: "やっぱかちゃか" },
+    { display: "喧嘩を売るならこっちも買うけど", reading: "けんかをうるならこっちもかうけど" },
     { display: "魔改造トーマス", reading: "まかいぞうとーます" },
     { display: "業界狭いな", reading: "ぎょうかいせまいな" },
+    { display: "吉住事変", reading: "よしずみじへん" },
+    { display: "論点をずらしている", reading: "ろんてんをずらしている" },
     { display: "技術者倫理の失敗作", reading: "ぎじゅつしゃりんりのしっぱいさく" },
     { display: "月がきれいですねどの月ですか", reading: "つきがきれいですねどのつきですか" },
     { display: "何もしてないけどヒューズが飛んだ", reading: "なにもしてないけどひゅーずがとんだ" },
@@ -79,7 +84,5 @@ export const WORDS: Record<string, Word[]> = {
     { display: "かわいそうかわにいそう", reading: "かわいそうかわにいそう" },
     { display: "生涯憐みの令", reading: "しょうがいあわれみのれい" },
     { display: "メンヘラなaiと共依存になりたい", reading: "めんへらなaiときょういぞんになりたい" }
-
-
   ],
 };
